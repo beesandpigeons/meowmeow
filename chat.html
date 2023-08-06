@@ -1,0 +1,66 @@
+<html lang="eng">
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitch chat</title>
+  <style>
+    html, body  {
+        margin = 0;
+        font-family: garamond;
+    }
+    #chat {
+        width: 400px;
+        height: 350px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    #chat blockquote {
+      border-radius: 25px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      background-color: hsla(41, 76%, 83%, 0.65);  
+      inline-size: 300px;
+      overflow-wrap: break-word;
+    }
+
+    #chat ul {
+        box-sizing: border-box;
+        margin-bottom: 5px;
+        list-style-type: none;
+        list-style-position: outside;
+    }
+    #chat ::-webkit-scrollbar {
+        display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat">
+    <ul>
+    </ul>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var chat = document.querySelector("#chat>ul");
+
+      ComfyJS.onChat = (user, message, flags, self, extra) => {
+        var newMessage = document.createElement("li");
+        var text = document.createElement("blockquote");
+
+        newMessage.innerText = user;
+        text.innerText = message;
+        
+        newMessage.append(text);
+        chat.append(newMessage);
+      }
+
+      ComfyJS.Init("beesandpigeons");
+    });
+  </script>
+</body>
+</html>
