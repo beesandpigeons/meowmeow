@@ -21,21 +21,27 @@
             }
             .messages {
                 list-style-type: none;
+                overflow-wrap: break-word;
+                margin: 0;
+                padding: 0;
+                
+                min-width: 180px;
+                max-width: fit-content;
                 
             }
             .sent-message {
-                
-                overflow-wrap: break-word;
                 padding: 15px;
-                display: inline-flex;
-                float: inline-end;
+                display: flex;
+                flex-direction: column-reverse;
+                text-align: right;
+                
                 background-color: blueviolet;
             }
             .received-message {
-                overflow-wrap: break-word;
                 padding: 15px;
-                display: inline-flex;
-                float: inline-start;
+                display: flex;
+                flex-direction: column;
+                text-align: left;
                 background-color: rgb(135, 118, 152);
             }
         </style>
