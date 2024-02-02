@@ -6,9 +6,10 @@
         <style>
             body {
                 font-family: palatino,serif;
+                width: 700px;
+                height: 300px;
             }
             .chat-window {
-                height: 300px;
                 overflow-y: scroll;
                 padding: 10px;
                 background-color: transparent;
@@ -18,16 +19,33 @@
                 padding: 10px;
                 box-sizing: border-box;
             }
+            .messages {
+                list-style-type: none;
+                
+            }
             .sent-message {
-                box-sizing: border-box;
+                
+                overflow-wrap: break-word;
+                padding: 15px;
+                display: inline-flex;
+                float: inline-end;
                 background-color: blueviolet;
+            }
+            .received-message {
+                overflow-wrap: break-word;
+                padding: 15px;
+                display: inline-flex;
+                float: inline-start;
+                background-color: rgb(135, 118, 152);
             }
         </style>
     </head>
     <body>
         <div class="chat-window">
-            <div class="sent-message">Hey there!</div>
-            <div class="received-message">Hi! How are you?</div>
+            <ul class="messages">
+                <div class="sent-message">Hey there!</div>
+                <div class="received-message">Hi! How are you?</div>
+            </ul>
         </div>
         <input class="message-input" type="text" placeholder="Type your message here...">
         </body>
