@@ -13,18 +13,8 @@ if response.status_code == 200:
     soup = BeautifulSoup(response.text, 'html.parser')
     events = soup.find_all('div', class_='event')
     for event in events:
-        title = event.find('h2', class_='title').text
-        if 'DKKQ' in title:
-            event = {
-                'summary': title,
-                'start': {
-                    'dateTime': f'{meeting_date}T{start_time}:00',
-                    'timeZone': 'Europe/Warsaw',
-                },
-                'end': {
-                    'dateTime': f'{meeting_date}T{end_time}:00',
-                    'timeZone': 'Europe/Warsaw',
-                }
-            }
+        print(event.prettify())
+        #title = event.find('h2', class_='title').text
+        #if 'DKKQ' in title:          
 else:
     print('Failed to fetch the events page.')
