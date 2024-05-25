@@ -29,6 +29,9 @@
                 font-size: 18px;
                 padding: 25px;
             }
+            .audio {
+                padding-top: 50px;
+            }
         </style>
     </head>
     <body>
@@ -54,8 +57,10 @@
                 <p>
                     <iframe style="align-self: flex-end"width="560" height="315" src="https://www.youtube.com/embed/YNZtHW_VnuE?si=MO4a5oULG1QpqpQp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </p>
-                <div>
-                    <audio src=""></audio>
+                <div class="audio">
+                    <audio controls autoplay muted>
+                        <source src="szkola/moo.mp3" type="audio/mp3">
+                    </audio>
                 </div>
             </div>
     </body>
